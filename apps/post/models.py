@@ -17,4 +17,4 @@ class Post(models.Model):
         return self.title
 
 class Comment(Post):
-    parent = models.ForeignKey(Post)
+    parent = models.ForeignKey(Post, related_name='post_parent')
