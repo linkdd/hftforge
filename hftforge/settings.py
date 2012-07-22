@@ -1,3 +1,5 @@
+import os
+
 # WebSite configuration
 
 PREFIX = ''
@@ -24,7 +26,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME':   'hftforge.db',
+        'NAME':   os.path.join(os.getcwd(), 'hftforge.db'),
         # unused for sqlite3
         'USER': '',
         'PASSWORD': '',
@@ -32,8 +34,6 @@ DATABASES = {
         'PORT': '',
     }
 }
-
-import os
 
 MEDIA_ROOT  = os.path.join(os.getcwd(), "media")
 STATIC_ROOT = os.path.join(os.getcwd(), "static")
@@ -75,11 +75,12 @@ ROOT_URLCONF = 'hftforge.urls'
 
 INSTALLED_APPS = (
     # HFTForge applications
-    'hftforge.apps.tagging',
-    'hftforge.apps.overview',
-    'hftforge.apps.forum',
-    'hftforge.apps.news',
-    'hftforge.apps.issues',
+    'apps.tagging',
+    'apps.projects',
+    'apps.post',
+    'apps.forum',
+    'apps.news',
+    'apps.bugtracker',
 
     # Django applications
     'django.contrib.staticfiles',
