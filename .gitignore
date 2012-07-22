@@ -28,3 +28,6 @@ pip-log.txt
 
 # Vim swap file
 *.sw[po]
+
+# database
+hftforge.db
