@@ -1,3 +1,6 @@
 from django.db import models
 
-# Create your models here.
+from apps.post.models import Post
+
+class ForumPost(Post):
+    pass
